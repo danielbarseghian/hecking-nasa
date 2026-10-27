@@ -1,6 +1,14 @@
 const API_KEY = import.meta.env.VITE_NASA_API_KEY;
 const app = document.querySelector("#app");
+const clock = document.querySelector("#clock");
 import "./style.css";
+
+function updateClock() {
+  clock.textContent = new Date().toLocaleTimeString();
+}
+
+updateClock();
+setInterval(updateClock, 1000);
 
 app.innerHTML = "<p>Loading...</p>";
 
